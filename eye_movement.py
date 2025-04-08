@@ -11,7 +11,7 @@ class_labels = ['center', 'left', 'right']
 font_letter = cv2.FONT_HERSHEY_PLAIN
 
 # Inisialisasi MediaPipe Face Landmarker dengan Tasks API
-base_options = python.BaseOptions(model_asset_path='face_landmarker.task')
+base_options = python.BaseOptions(model_asset_path='Models/face_landmarker.task')
 options = vision.FaceLandmarkerOptions(
     base_options=base_options,
     running_mode=vision.RunningMode.VIDEO,
@@ -22,7 +22,7 @@ options = vision.FaceLandmarkerOptions(
 landmarker = vision.FaceLandmarker.create_from_options(options)
 
 # Load model arah mata
-model = load_model('eye_model2.h5')
+model = load_model('Models/eye_modelv3.h5')
 
 # Fungsi untuk crop area mata dari gambar
 def crop_eye(img, landmarks, eye_indices):
